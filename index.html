@@ -666,6 +666,90 @@ footer .foot-meta a {
 }
 footer .foot-meta a:hover { color: var(--c1); border-bottom-color: var(--c1); }
 
+/* SECTION HEADER WITH HELP */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  margin-bottom: 8px;
+}
+.help-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 6px;
+  transition: border-color 150ms, color 150ms, background 150ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+.help-icon:hover, .help-icon.active {
+  border-color: var(--c1);
+  color: var(--c1);
+  background: rgba(232,67,10,0.08);
+}
+.help-tooltip {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  width: 380px;
+  max-width: calc(100vw - 40px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  z-index: 50;
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 180ms, transform 180ms, visibility 180ms;
+}
+.help-tooltip.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.help-tooltip h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.help-tooltip p {
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.help-tooltip p:last-child { margin-bottom: 0; }
+.help-tooltip strong { color: var(--ink); font-weight: 700; }
+.help-tooltip .highlight {
+  display: block;
+  background: rgba(232,67,10,0.07);
+  border-left: 3px solid var(--c1);
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin: 12px 0;
+}
+
 /* MOBILE */
 @media (max-width: 600px) {
   main { padding: 20px 14px; }
@@ -733,7 +817,18 @@ footer .foot-meta a:hover { color: var(--c1); border-bottom-color: var(--c1); }
 
 <!-- ========== SECTION 1: CORE FORMULA ========== -->
 <section class="section active" id="formula">
-  <h2 class="section-title">Core Formula</h2>
+  <div class="section-header">
+    <h2 class="section-title">Core Formula</h2>
+    <button class="help-icon" id="helpIcon" aria-label="How to use this guide" aria-expanded="false">?</button>
+    <div class="help-tooltip" id="helpTooltip" role="dialog" aria-label="How to use this guide">
+      <h4>How to Use It as a Daily Habit</h4>
+      <p>Start with the <strong>Core Formula</strong> tab — the O-P-E-B structure is the spine of everything. Once that feels natural, move to <strong>Sentence Flow</strong> to learn the spines for different question types.</p>
+      <p>The <strong>Practice Drill</strong> tab is your daily drill. Eight cards, one per common question type. Answer each one aloud, time yourself, record on your phone and replay. Target: 60–90 seconds, zero fillers, a clean bridge close.</p>
+      <span class="highlight">The one thing that moves the needle fastest: the <strong>pause technique</strong> in <strong>Kill the Fillers</strong>. Replacing every "um / you know / so yeah" with a one-second pause immediately elevates how you're perceived. Fastest ROI of any communication change.</span>
+      <p>Use <strong>Opening Lines</strong> before any interview or executive session as a warmup. Read the power openers aloud three times — it primes your brain to lead with strength rather than search for words.</p>
+      <p>The system works for everything — interviews, EBC sessions, CISO briefings, board presentations. The spine shifts slightly per context, but the core principle never does: <strong>outcome first, proof second, explanation third, bridge to close.</strong></p>
+    </div>
+  </div>
   <p class="section-intro">One formula that works in any executive conversation — interviews, EBC sessions, board briefings, or media appearances. Executives think in outcomes first, not stories first. Match their mental model.</p>
 
   <div class="card">
@@ -1697,6 +1792,36 @@ document.querySelectorAll('.template-box').forEach(box => {
 
 // Initialize practice drill
 renderDrillCard();
+
+// ===== Help tooltip (Core Formula) =====
+const helpIcon = document.getElementById('helpIcon');
+const helpTooltip = document.getElementById('helpTooltip');
+if (helpIcon && helpTooltip) {
+  let pinned = false;
+  const open = () => {
+    helpTooltip.classList.add('show');
+    helpIcon.classList.add('active');
+    helpIcon.setAttribute('aria-expanded', 'true');
+  };
+  const close = () => {
+    helpTooltip.classList.remove('show');
+    helpIcon.classList.remove('active');
+    helpIcon.setAttribute('aria-expanded', 'false');
+    pinned = false;
+  };
+  helpIcon.addEventListener('mouseenter', open);
+  helpIcon.addEventListener('mouseleave', () => { if (!pinned) close(); });
+  helpIcon.addEventListener('click', (e) => {
+    e.stopPropagation();
+    pinned = !pinned;
+    if (pinned) open(); else close();
+  });
+  helpTooltip.addEventListener('mouseenter', () => { if (!pinned) open(); });
+  helpTooltip.addEventListener('mouseleave', () => { if (!pinned) close(); });
+  helpTooltip.addEventListener('click', e => e.stopPropagation());
+  document.addEventListener('click', () => { if (pinned) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && pinned) close(); });
+}
 
 // ===== Service worker registration (PWA) =====
 if ('serviceWorker' in navigator) {
