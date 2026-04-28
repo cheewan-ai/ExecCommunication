@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exec Comms Guide — Cheewan</title>
+<meta name="description" content="Executive Communication Guide by Cheewan — formulas, spines, openers, and practice drills for high-stakes executive conversations.">
+<meta name="theme-color" content="#e8430a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23e8430a'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="icon-192.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Exec Comms">
+<meta name="mobile-web-app-capable" content="yes">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f2eb;
+  --card: #fffcf7;
+  --border: #d9d0c4;
+  --ink: #1a1410;
+  --ink2: #3d3530;
+  --muted: #8a7f74;
+  --c1: #e8430a;
+  --c2: #2563eb;
+  --c3: #16a34a;
+  --c4: #9333ea;
+  --c5: #d97706;
+  --c6: #0891b2;
+  --c7: #be185d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--ink2);
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+body { min-height: 100vh; }
+
+/* HEADER */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-dot {
+  width: 6px; height: 6px;
+  background: var(--c1);
+  display: inline-block;
+}
+.brand-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+}
+.site-header .by {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* NAV */
+.nav {
+  position: sticky;
+  top: 49px;
+  z-index: 99;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 24px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav { scrollbar-width: none; }
+
+.tab {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 150ms, color 150ms;
+  flex: 0 0 auto;
+}
+.tab:hover { background: rgba(232,67,10,0.08); color: var(--c1); }
+.tab.active { background: var(--c1); color: var(--card); }
+.tab.active:hover { background: var(--c1); color: var(--card); }
+
+/* MAIN */
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 20px;
+}
+
+.section { display: none; animation: fade 200ms ease-in; }
+.section.active { display: block; }
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.section-intro {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  color: var(--ink2);
+  margin-bottom: 20px;
+  line-height: 1.75;
+}
+
+/* CARDS */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 26px;
+  margin-bottom: 16px;
+}
+.card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+h2.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.04em;
+  font-size: 32px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.04em;
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+p { margin-bottom: 12px; color: var(--ink2); }
+p:last-child { margin-bottom: 0; }
+
+/* BOXES */
+.formula-box {
+  background: rgba(147,51,234,0.07);
+  border-left: 4px solid var(--c4);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin: 12px 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.good-box {
+  background: rgba(22,163,74,0.07);
+  border-left: 3px solid var(--c3);
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+.good-box .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--c3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  display: block;
+  font-weight: 500;
+}
+
+.bad-box {
+  background: rgba(232,67,10,0.07);
+  border-left: 3px solid var(--c1);
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+.bad-box .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--c1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  display: block;
+  font-weight: 500;
+}
+
+.tip-box {
+  background: rgba(217,119,6,0.08);
+  border-left: 3px solid var(--c5);
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+.tip-box .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--c5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  display: block;
+  font-weight: 500;
+}
+
+.template-box {
+  background: rgba(8,145,178,0.06);
+  border-left: 3px solid var(--c6);
+  padding: 16px 18px;
+  border-radius: 8px;
+  margin: 12px 0;
+  position: relative;
+}
+.template-box .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--c6);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  display: block;
+  font-weight: 500;
+}
+.template-content {
+  white-space: pre-wrap;
+  line-height: 1.85;
+  color: var(--ink2);
+  font-size: 14px;
+}
+.template-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+  align-items: center;
+}
+.template-actions button {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+  transition: color 150ms;
+}
+.template-actions button:hover { color: var(--c1); }
+.copy-status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--c3);
+  opacity: 0;
+  transition: opacity 200ms;
+}
+.copy-status.show { opacity: 1; }
+.saved-indicator {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 250ms;
+  margin-left: auto;
+}
+.saved-indicator.show { opacity: 1; }
+
+[contenteditable="true"] {
+  display: inline-block;
+  border-bottom: 1.5px solid var(--c6);
+  min-width: 80px;
+  color: var(--ink);
+  padding: 0 4px;
+  outline: none;
+  font-style: normal;
+}
+[contenteditable="true"]:empty:before {
+  content: attr(data-placeholder);
+  color: var(--muted);
+  font-style: italic;
+}
+[contenteditable="true"]:focus { background: rgba(8,145,178,0.06); }
+
+.callout-box {
+  background: rgba(8,145,178,0.06);
+  border-left: 3px solid var(--c6);
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin: 12px 0;
+  color: var(--ink2);
+}
+
+/* O-P-E-B Table */
+.opeb-table {
+  margin: 12px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.opeb-row {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.opeb-row:last-child { border-bottom: none; }
+.opeb-row:nth-child(odd) { background: var(--card); }
+.opeb-row:nth-child(even) { background: var(--bg); }
+.opeb-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+.opeb-content { flex: 1; }
+.opeb-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+/* Side-by-side examples */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+.compare-grid .bad-box, .compare-grid .good-box { margin: 0; }
+
+.example-block { margin: 16px 0; }
+.example-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Numbered steps */
+.steps { margin: 14px 0; }
+.step {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+  align-items: flex-start;
+}
+.step-num {
+  width: 28px;
+  height: 28px;
+  background: var(--c1);
+  color: var(--card);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.step-text { flex: 1; padding-top: 2px; }
+
+/* Opener types */
+.opener-type { margin-bottom: 22px; }
+.opener-tag {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: white;
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+.opener-tag.t1 { background: var(--c1); }
+.opener-tag.t2 { background: var(--c3); }
+.opener-tag.t3 { background: var(--c4); }
+.opener-tag.t4 { background: var(--c6); }
+.opener-pattern {
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+.opener-examples {
+  list-style: none;
+  padding: 0;
+}
+.opener-examples li {
+  font-size: 13px;
+  color: var(--ink2);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.65;
+}
+.opener-examples li:last-child { border-bottom: none; }
+
+/* Banned pills */
+.pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+.pill {
+  display: inline-block;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--c7);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 16px;
+}
+.pill.hedge {
+  background: rgba(190,24,93,0.08);
+  border: 1px solid rgba(190,24,93,0.2);
+  color: var(--c7);
+}
+
+/* Stat row */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 14px 0;
+}
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 14px;
+  text-align: center;
+}
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-num.red { color: var(--c1); }
+.stat-num.amber { color: var(--c5); }
+.stat-num.green { color: var(--c3); }
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.45;
+}
+
+/* PRACTICE DRILL */
+.drill-progress {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: all 200ms;
+  position: relative;
+}
+.dot.completed {
+  background: var(--c1);
+}
+.dot.completed::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--card);
+  font-size: 7px;
+  font-weight: 700;
+}
+.dot.active {
+  width: 12px;
+  height: 12px;
+  background: var(--c1);
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--c1);
+}
+
+.drill-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 26px;
+  margin-bottom: 16px;
+  transition: opacity 280ms;
+}
+.drill-card.fading { opacity: 0; }
+
+.drill-num {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--c1);
+  color: var(--card);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  letter-spacing: 0.04em;
+}
+
+.drill-question {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.drill-bottom {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.target-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 16px;
+}
+.btn {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--c1);
+  color: var(--c1);
+  background: transparent;
+  border-radius: 6px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: background 150ms;
+  min-height: 36px;
+}
+.btn:hover { background: rgba(232,67,10,0.08); }
+
+.timer-display {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  min-width: 60px;
+  display: inline-block;
+}
+.timer-display.warning { color: var(--c5); }
+.timer-display.danger { color: var(--c1); }
+.times-up {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--c1);
+  opacity: 0;
+  transition: opacity 300ms;
+}
+.times-up.show { opacity: 1; }
+
+.drill-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding: 10px 0;
+}
+.nav-btn {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  color: var(--c1);
+  cursor: pointer;
+  padding: 8px 12px;
+  min-height: 44px;
+  transition: color 150ms;
+}
+.nav-btn:hover { color: var(--c1); opacity: 0.7; }
+.nav-btn:disabled { color: var(--muted); cursor: not-allowed; opacity: 0.4; }
+.card-counter {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* FOOTER */
+footer {
+  margin-top: 48px;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+footer .rule {
+  width: 40px;
+  height: 2px;
+  background: var(--c1);
+  margin: 0 auto 16px;
+}
+footer .foot-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+footer .foot-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+footer .foot-meta a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--muted);
+}
+footer .foot-meta a:hover { color: var(--c1); border-bottom-color: var(--c1); }
+
+/* MOBILE */
+@media (max-width: 600px) {
+  main { padding: 20px 14px; }
+  .card { padding: 18px 18px; }
+  h2.section-title { font-size: 28px; }
+  h3 { font-size: 18px; }
+  body { font-size: 13px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .stat-row { grid-template-columns: 1fr; }
+  .stat-num { font-size: 32px; }
+  .drill-question { font-size: 20px; }
+  .site-header { padding: 12px 16px; }
+  .brand-title { font-size: 16px; }
+  .nav { padding: 10px 16px; }
+  .opeb-row { flex-direction: row; }
+  .nav-btn, .btn { min-height: 44px; }
+}
+
+/* PRINT */
+@media print {
+  body { background: white; color: black; }
+  .site-header, .nav, .drill-nav, .drill-progress, .template-actions,
+  .timer-display, .target-badge, .btn, .nav-btn, .card-counter, .times-up,
+  .saved-indicator, .copy-status { display: none !important; }
+  .section { display: block !important; page-break-after: always; }
+  .section:last-of-type { page-break-after: auto; }
+  .card, .drill-card {
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+  .formula-box, .good-box, .bad-box, .tip-box, .template-box, .callout-box {
+    background: white;
+    border: 1px solid #ccc;
+  }
+  [contenteditable="true"] { border-bottom: 1px solid #999; }
+  .pill { background: white; border: 1px solid #999; color: black; }
+  main { max-width: 100%; padding: 0; }
+  h2.section-title, h3 { color: black; }
+  .opener-tag { background: #333 !important; color: white; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <span class="brand-dot"></span>
+    <span class="brand-title">EXECUTIVE COMMUNICATION GUIDE</span>
+  </div>
+  <div class="by">by cheewan</div>
+</header>
+
+<nav class="nav" id="nav">
+  <button class="tab active" data-section="formula">Core Formula</button>
+  <button class="tab" data-section="flow">Sentence Flow</button>
+  <button class="tab" data-section="openings">Opening Lines</button>
+  <button class="tab" data-section="fillers">Kill the Fillers</button>
+  <button class="tab" data-section="close">How to Close</button>
+  <button class="tab" data-section="drill">Practice Drill</button>
+</nav>
+
+<main>
+
+<!-- ========== SECTION 1: CORE FORMULA ========== -->
+<section class="section active" id="formula">
+  <h2 class="section-title">Core Formula</h2>
+  <p class="section-intro">One formula that works in any executive conversation — interviews, EBC sessions, board briefings, or media appearances. Executives think in outcomes first, not stories first. Match their mental model.</p>
+
+  <div class="card">
+    <div class="card-label">The Master Formula</div>
+    <div class="formula-box">O — Outcome first  ·  P — Proof  ·  E — Explanation  ·  B — Bridge</div>
+
+    <div class="opeb-table">
+      <div class="opeb-row">
+        <span class="opeb-dot" style="background: var(--c1);"></span>
+        <div class="opeb-content">
+          <div class="opeb-title">Outcome first</div>
+          <div>Start with the result. What happened? What was the business impact? Lead with the destination — let them ask how you got there.</div>
+        </div>
+      </div>
+      <div class="opeb-row">
+        <span class="opeb-dot" style="background: var(--c2);"></span>
+        <div class="opeb-content">
+          <div class="opeb-title">Proof — one metric</div>
+          <div>$7.6M influenced. 86% conversion. 90% retention. The number does the credibility work for you. One specific, verifiable fact.</div>
+        </div>
+      </div>
+      <div class="opeb-row">
+        <span class="opeb-dot" style="background: var(--c3);"></span>
+        <div class="opeb-content">
+          <div class="opeb-title">Explanation — 2 sentences max</div>
+          <div>How did you achieve it? Maximum two sentences. If it needs more, you're still telling the journey, not the outcome.</div>
+        </div>
+      </div>
+      <div class="opeb-row">
+        <span class="opeb-dot" style="background: var(--c4);"></span>
+        <div class="opeb-content">
+          <div class="opeb-title">Bridge to the role</div>
+          <div>Connect to what they need. "That experience maps directly to..." Close every answer with a bridge or it just floats.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Principle</div>
+    <div class="formula-box">Headline first. Article only if asked.</div>
+    <p>Think like a newspaper editor. Your answer is the headline. The full story is the article — available on request. Executives read headlines first and ask for the article if they need it. Most candidates give the full article unprompted and never land the headline. They lose the room before they get to the point.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-label">See it in Action</div>
+
+    <div class="example-block">
+      <div class="example-label">Example 1</div>
+      <div class="compare-grid">
+        <div class="bad-box">
+          <span class="label">Weaker</span>
+          <div>"So what we did is I worked with my solution architect to pull out all this critical information, and then I designed the playbook, and then we look at adoption, and we also built this CX thing, and I won an award for that..."</div>
+        </div>
+        <div class="good-box">
+          <span class="label">Stronger</span>
+          <div>"The outcome: a dashboard ranked top 3 of 3,000+ global assets. I identified a visibility gap, partnered with architects to build predictive signals across 2,000 customers. That's the same analytical problem FortiGuard faces with regional threat intelligence operationalization."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-label">Example 2</div>
+      <div class="compare-grid">
+        <div class="bad-box">
+          <span class="label">Weaker</span>
+          <div>"In the past, you know, detection was the main thing, and then there was this alert fatigue issue, and then AI came along, and like, you know, things have changed a lot, so yeah..."</div>
+        </div>
+        <div class="good-box">
+          <span class="label">Stronger</span>
+          <div>"Three shifts define the threat landscape. Detection became response. Alert fatigue became the operational crisis. AI eliminated the human-speed assumption entirely. The implication: your customers' security posture was designed for a world that no longer exists."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-label">Example 3</div>
+      <div class="compare-grid">
+        <div class="bad-box">
+          <span class="label">Weaker</span>
+          <div>"I've done quite a few EBC sessions, I think around maybe fifty or so over two years, and they've gone pretty well from what I can tell, so yeah, I'm sort of comfortable with that kind of thing..."</div>
+        </div>
+        <div class="good-box">
+          <span class="label">Stronger</span>
+          <div>"Over two years I delivered 50+ EBC sessions to 200+ C-suite stakeholders across AMEA. The content framework I built became the global standard for high-stakes EBC pursuits and contributed to $7.6M in influenced revenue at 86% pipeline conversion."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-label">Example 4</div>
+      <div class="compare-grid">
+        <div class="bad-box">
+          <span class="label">Weaker</span>
+          <div>"So I've managed teams, a decent size team across Southeast Asia, and there were various people in pre-sales and post-sales and customer success, and we did pretty well retention-wise I think..."</div>
+        </div>
+        <div class="good-box">
+          <span class="label">Stronger</span>
+          <div>"I built and led a 40-person technical organization across seven SEA markets — 29 SEs, 12 CSMs, 3 managers — sustaining 90% retention over three years while scaling regional revenue from $101M to $134M."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 2: SENTENCE FLOW ========== -->
+<section class="section" id="flow">
+  <h2 class="section-title">Sentence Flow</h2>
+  <p class="section-intro">Every strong executive answer runs on a spine. Learn these four spines and you can structure any answer in real time — no preparation required.</p>
+
+  <div class="card">
+    <div class="card-label">Spine 1 — Background &amp; Storytelling Questions</div>
+    <div class="formula-box">Number → Point → Point → Point → Bridge</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Signal the structure — "Three things define my background." Their brain opens three slots and stops wondering when you'll finish.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">One sentence per point, metric-led — "First, fifteen years building SE organizations — five promotions, seven markets, $134M revenue scale."</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Bridge close — "That combination maps directly to what the FortiGuard evangelist role sits at." Never let your answer just stop. Land it.</div>
+      </div>
+    </div>
+    <div class="template-box" data-template-id="flow-1">
+      <span class="label">Template</span>
+      <div class="template-content"><span contenteditable="true" data-field="0" data-placeholder="Number">[Number]</span> things define my background.
+First, <span contenteditable="true" data-field="1" data-placeholder="metric-led point — most relevant to this role">[metric-led point — most relevant to this role]</span>.
+Second, <span contenteditable="true" data-field="2" data-placeholder="metric-led point — your differentiator">[metric-led point — your differentiator]</span>.
+Third, <span contenteditable="true" data-field="3" data-placeholder="the thing that makes you unusual in this market">[the thing that makes you unusual in this market]</span>.
+That combination maps directly to <span contenteditable="true" data-field="4" data-placeholder="what this specific role needs">[what this specific role needs]</span>.</div>
+      <div class="template-actions">
+        <button class="copy-btn">Copy Template</button>
+        <button class="clear-btn">Clear all</button>
+        <span class="copy-status">Copied ✓</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Spine 2 — Opinion &amp; Landscape Questions</div>
+    <div class="formula-box">Shift 1 (past) → Shift 2 (change) → Shift 3 (now) → Implication</div>
+    <p>Always end with an implication, never a description. Executives already know what happened. They want your read on what it means and what should be done. Stopping at the description is the most common mistake senior candidates make in strategic conversations.</p>
+
+    <div class="template-box" data-template-id="flow-2">
+      <span class="label">Template</span>
+      <div class="template-content">The landscape has moved through <span contenteditable="true" data-field="0" data-placeholder="phase 1">[phase 1]</span>, then <span contenteditable="true" data-field="1" data-placeholder="phase 2">[phase 2]</span>,
+and we're now at <span contenteditable="true" data-field="2" data-placeholder="phase 3">[phase 3]</span>.
+The implication for <span contenteditable="true" data-field="3" data-placeholder="audience / their customers">[audience / their customers]</span> is <span contenteditable="true" data-field="4" data-placeholder="specific consequence">[specific consequence]</span>.
+That's the conversation I'd build <span contenteditable="true" data-field="5" data-placeholder="company/brand">[company/brand]</span> around.</div>
+      <div class="template-actions">
+        <button class="copy-btn">Copy Template</button>
+        <button class="clear-btn">Clear all</button>
+        <span class="copy-status">Copied ✓</span>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-label">Worked Example A</div>
+      <div class="good-box">
+        <span class="label">Stronger</span>
+        <div>"In the early years, the game was detection — can you see the threat? Then the question became response — how fast can you contain it? Now, AI has eliminated the human-speed assumption entirely. The implication for APAC enterprises: their security posture was designed for a threat landscape that no longer exists."</div>
+      </div>
+    </div>
+    <div class="example-block">
+      <div class="example-label">Worked Example B</div>
+      <div class="good-box">
+        <span class="label">Stronger</span>
+        <div>"Three years ago, customers bought point solutions for each threat vector. Then platform fatigue set in — too many consoles, no unified visibility. Now the conversation is consolidation — one fabric, one risk view. The implication for FortiGuard: threat intelligence has to be the language that justifies that consolidation decision to the board."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Spine 3 — Gap &amp; Challenge Questions</div>
+    <div class="formula-box">Acknowledge → Reframe → Evidence → Forward action</div>
+    <p>Never apologize for a gap. Surface it yourself, reframe it on your terms, and move forward. Leaders who can see their own blind spots are far safer to promote than leaders who can't. Proactive honesty is itself a proof of senior-level self-awareness.</p>
+
+    <div class="template-box" data-template-id="flow-3">
+      <span class="label">Template</span>
+      <div class="template-content">I want to be transparent — <span contenteditable="true" data-field="0" data-placeholder="honest gap in one sentence">[honest gap in one sentence]</span>.
+The way I think about it: <span contenteditable="true" data-field="1" data-placeholder="reframe on your terms">[reframe on your terms]</span>.
+Here's the evidence it doesn't disqualify me: <span contenteditable="true" data-field="2" data-placeholder="specific proof point">[specific proof point]</span>.
+In this role I'd address it by <span contenteditable="true" data-field="3" data-placeholder="concrete action in first 90 days">[concrete action in first 90 days]</span>.</div>
+      <div class="template-actions">
+        <button class="copy-btn">Copy Template</button>
+        <button class="clear-btn">Clear all</button>
+        <span class="copy-status">Copied ✓</span>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-label">Worked Example</div>
+      <div class="good-box">
+        <span class="label">Stronger</span>
+        <div>"I want to be transparent — my depth is in operationalizing threat intelligence for enterprise outcomes, not in malware lab research. The way I think about it: this is a FortiGuard evangelist role, not a threat researcher role. Here's the evidence: I've delivered 100+ CISO briefings using threat narrative to drive platform consolidation decisions worth millions. In this role, I'd partner closely with the FortiGuard research team to deepen technical fluency in the first 90 days."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Spine 4 — Motivation &amp; "Why Leaving" Questions</div>
+    <div class="formula-box">Context (1 sentence) → Forward rationale → Role alignment</div>
+
+    <div class="tip-box">
+      <span class="label">Tip</span>
+      <div>Context explains the circumstance. Rationale explains the ambition. Role alignment closes the argument. Keep context to one sentence — it's the setup, not the answer. Never speak negatively about any employer.</div>
+    </div>
+
+    <div class="template-box" data-template-id="flow-4">
+      <span class="label">Template</span>
+      <div class="template-content"><span contenteditable="true" data-field="0" data-placeholder="One sentence context">[One sentence context — reorg, transition, natural inflection point]</span>.
+More fundamentally, <span contenteditable="true" data-field="1" data-placeholder="what genuinely energized you most in your work">[what genuinely energized you most in your work]</span>.
+This role is where <span contenteditable="true" data-field="2" data-placeholder="that work">[that work]</span> is the primary function —
+not one component of a broader mandate.
+That's not a lateral move — it's the role I've been building toward.</div>
+      <div class="template-actions">
+        <button class="copy-btn">Copy Template</button>
+        <button class="clear-btn">Clear all</button>
+        <span class="copy-status">Copied ✓</span>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-label">Worked Example</div>
+      <div class="good-box">
+        <span class="label">Stronger</span>
+        <div>"Trend Micro's restructuring as Trend AI created a natural inflection point. More fundamentally, the work that energized me most was the executive engagement — EBC content, threat narrative, CISO conversations that moved platform decisions. This role is where that work is the primary function. That's not a lateral move — that's the role I've been building toward."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 3: OPENING LINES ========== -->
+<section class="section" id="openings">
+  <h2 class="section-title">Opening Lines</h2>
+  <p class="section-intro">The first five words determine whether the executive leans in or checks their phone. Strong openers signal you already have the answer — you're delivering it, not searching for it.</p>
+
+  <div class="card">
+    <div class="card-label">Use These Patterns</div>
+
+    <div class="opener-type">
+      <span class="opener-tag t1">Number Open</span>
+      <div class="opener-pattern">Open with the count. Signal the structure before you give it.</div>
+      <ul class="opener-examples">
+        <li>"Three shifts define where the threat landscape is heading..."</li>
+        <li>"Two things converged that made this the right move for me..."</li>
+        <li>"Four markets account for eighty percent of APAC enterprise security spend — and I've led SE teams in all four..."</li>
+        <li>"One number tells the whole platform adoption story: thirty percent attach rate to sixty percent in six quarters..."</li>
+      </ul>
+    </div>
+
+    <div class="opener-type">
+      <span class="opener-tag t2">Outcome Open</span>
+      <div class="opener-pattern">Lead with the result. Let them ask how you got there.</div>
+      <ul class="opener-examples">
+        <li>"The result was a dashboard ranked top 3 of 3,000 global assets..."</li>
+        <li>"We scaled regional revenue from $101M to $134M over three years..."</li>
+        <li>"Eighty-six percent pipeline conversion. That's what the EBC program delivered — and here's how we built it..."</li>
+        <li>"Ninety percent team retention across seven markets over three years. That number drives everything I'll tell you today..."</li>
+      </ul>
+    </div>
+
+    <div class="opener-type">
+      <span class="opener-tag t3">Position Open</span>
+      <div class="opener-pattern">State your view directly. Executives respect a clear point of view.</div>
+      <ul class="opener-examples">
+        <li>"My view is that the biggest threat to APAC enterprises right now is AI-accelerated social engineering, not malware..."</li>
+        <li>"The distinction I'd draw is between threat evangelism and threat research — they're different roles requiring different profiles..."</li>
+        <li>"The platform consolidation argument only works if CIOs and CISOs share a language — that's the gap I kept solving in every EBC session..."</li>
+        <li>"Most SE leaders underestimate how much the post-sales motion affects the pre-sales narrative — I sit at that intersection deliberately..."</li>
+      </ul>
+    </div>
+
+    <div class="opener-type">
+      <span class="opener-tag t4">Anchor Open</span>
+      <div class="opener-pattern">Lead with a credential that earns you the right to speak.</div>
+      <ul class="opener-examples">
+        <li>"In 100+ CISO sessions across AMEA, the pattern I kept seeing was evaluations stalling at mid-management level..."</li>
+        <li>"Fifteen years in the same market gives you a particular lens on what actually drives platform adoption decisions..."</li>
+        <li>"Having spent two years at Deloitte doing GRC before moving into technical pre-sales, I think about cybersecurity investment differently than most SE leaders..."</li>
+        <li>"Every quarter for three years I ran war rooms during active breaches — that experience changes how you talk to a CISO at 2am..."</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Never Start With These</div>
+    <div class="pill-grid">
+      <span class="pill">"So um..."</span>
+      <span class="pill">"Yeah so..."</span>
+      <span class="pill">"To be very frank..."</span>
+      <span class="pill">"I think..."</span>
+      <span class="pill">"You know..."</span>
+      <span class="pill">"Like..."</span>
+      <span class="pill">"Honestly..."</span>
+      <span class="pill">"I mean..."</span>
+      <span class="pill">"I'm not sure but..."</span>
+      <span class="pill">"Good question..."</span>
+      <span class="pill">"That's a great point..."</span>
+      <span class="pill">"Um basically..."</span>
+      <span class="pill">"Kind of..."</span>
+      <span class="pill">"Let me think..."</span>
+    </div>
+    <div class="tip-box">
+      <span class="label">Tip</span>
+      <div>Every one of these signals the brain is still searching for the answer. The fix is not different words — it's a one-second pause, then a power opener. Silence reads as confidence. Fillers read as uncertainty.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 4: KILL THE FILLERS ========== -->
+<section class="section" id="fillers">
+  <h2 class="section-title">Kill the Fillers</h2>
+  <p class="section-intro">Filler words are not a speech habit — they are a credibility signal. Every "um", "you know", and "so yeah" tells the listener your brain has not found the answer yet. Replace them all with silence.</p>
+
+  <div class="card">
+    <div class="card-label">The Core Technique</div>
+    <div class="formula-box">Filler word → Replace with silence (1–2 seconds)</div>
+
+    <div class="compare-grid">
+      <div class="bad-box">
+        <span class="label">Weaker</span>
+        <div>"So um, yeah, in terms of the, you know, the threat landscape, I think, like, what I see is that, um, AI has kind of, you know, changed things quite a lot for customers..."</div>
+      </div>
+      <div class="good-box">
+        <span class="label">Stronger</span>
+        <div>"Three shifts define the threat landscape. [pause] First, detection evolved into response. Second, alert fatigue became the core operational problem. Third — AI eliminated the human-speed assumption entirely."</div>
+      </div>
+    </div>
+
+    <div class="callout-box">
+      A 2-second pause after a question signals you are considering your answer. A 2-second stream of fillers signals you don't have one. Same duration. Opposite impression.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Audit From the Interview Transcript</div>
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-num red">40+</div>
+        <div class="stat-label">filler words in one interview</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num amber">8×</div>
+        <div class="stat-label">times "you know" appeared</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num green">&lt;3</div>
+        <div class="stat-label">your target per answer</div>
+      </div>
+    </div>
+    <div class="tip-box">
+      <span class="label">Tip</span>
+      <div>Record yourself answering for 90 seconds. Count every filler. Replay and wince. Repeat until under 3 per answer. Most people reach under 5 within one week of daily practice. Under 3 takes about two weeks. Under 1 is mastery.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Hedge Words — The Confidence Killers</div>
+    <p>Filler words are a speech pattern. Hedge words are a confidence pattern. They tell the listener you're not sure of your own answer — which makes them not sure either. Use direct language. If you're uncertain, say "my read is" or "my view is" — not "I think maybe..."</p>
+
+    <div class="example-block">
+      <div class="example-label">Superpower question</div>
+      <div class="compare-grid">
+        <div class="bad-box">
+          <span class="label">Weaker</span>
+          <div>"I think my superpower is probably storytelling. I guess Baburaj might say that I'm kind of good at messaging and you know, sort of building content that resonates..."</div>
+        </div>
+        <div class="good-box">
+          <span class="label">Stronger</span>
+          <div>"Baburaj would say two things: I make the complex simple, and I build things that scale. Both show up in the data — the EBC framework went global, the CX dashboard became a top-3 asset across 3,000 reports."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-label">Example 5 — EBC Sessions</div>
+      <div class="compare-grid">
+        <div class="bad-box">
+          <span class="label">Weaker</span>
+          <div>"I mean, I've done quite a few EBC sessions, I think around maybe fifty or so over two years, and they've gone pretty well from what I can tell, so yeah, I'm sort of comfortable with that kind of thing..."</div>
+        </div>
+        <div class="good-box">
+          <span class="label">Stronger</span>
+          <div>"Over two years I delivered 50+ EBC sessions to 200+ C-suite stakeholders across AMEA. The content framework I built for those sessions was adopted globally by my VP's team across both APAC and the US."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-label">Example 6 — Threat Actors</div>
+      <div class="compare-grid">
+        <div class="bad-box">
+          <span class="label">Weaker</span>
+          <div>"So for the threat actor question, yeah, I kind of see different types of actors, you know, some are state-sponsored, some are kind of more criminal, and at this point I kind of you know... it's complicated..."</div>
+        </div>
+        <div class="good-box">
+          <span class="label">Stronger</span>
+          <div>"Three actor categories dominate APAC threat briefings. Nation-state actors targeting FSI and critical infrastructure. Organized ransomware groups — the SEA manufacturing sector is increasingly in their crosshairs. And AI-enabled opportunists who previously lacked the sophistication to execute complex attacks."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pill-grid">
+      <span class="pill hedge">"I think..."</span>
+      <span class="pill hedge">"I guess..."</span>
+      <span class="pill hedge">"Probably..."</span>
+      <span class="pill hedge">"Kind of..."</span>
+      <span class="pill hedge">"Sort of..."</span>
+      <span class="pill hedge">"Maybe..."</span>
+      <span class="pill hedge">"I'm not sure but..."</span>
+      <span class="pill hedge">"I believe..."</span>
+      <span class="pill hedge">"Might be..."</span>
+      <span class="pill hedge">"Could be..."</span>
+      <span class="pill hedge">"I suppose..."</span>
+      <span class="pill hedge">"Roughly..."</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">How to Practice</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Record</strong> — Answer a question aloud for 90 seconds on your phone</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Count</strong> — Replay and tally fillers + hedge words separately</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Benchmark</strong> — Week 1: under 8. Week 2: under 5. Week 3: under 3</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Repeat</strong> — One question per day using the Practice Drill cards</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 5: HOW TO CLOSE ========== -->
+<section class="section" id="close">
+  <h2 class="section-title">How to Close</h2>
+  <p class="section-intro">Most people let answers drift to a natural stop. Strong communicators land every answer on a deliberate point — and then stop talking. The last sentence is the one that gets remembered.</p>
+
+  <div class="card">
+    <div class="card-label">Close Type 1 — For Achievement &amp; Experience Answers</div>
+    <div class="formula-box">Story or proof → "That maps directly to..." → Specific role element</div>
+
+    <div class="template-box" data-template-id="close-1">
+      <span class="label">Template</span>
+      <div class="template-content">...and that experience of <span contenteditable="true" data-field="0" data-placeholder="your achievement">[your achievement]</span> maps directly to
+what <span contenteditable="true" data-field="1" data-placeholder="role / company">[role / company]</span> needs because <span contenteditable="true" data-field="2" data-placeholder="specific connection to their priority">[specific connection to their priority]</span>.</div>
+      <div class="template-actions">
+        <button class="copy-btn">Copy Template</button>
+        <button class="clear-btn">Clear all</button>
+        <span class="copy-status">Copied ✓</span>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-label">A — Platform adoption</div>
+      <div class="good-box">
+        <span class="label">Stronger</span>
+        <div>"...doubling the platform attach rate from 30% to 60% across 2,000 customers maps directly to FortiGuard's 'grow strategic services' objective — the motion is identical: change how customers see the value of what they already own."</div>
+      </div>
+    </div>
+    <div class="example-block">
+      <div class="example-label">B — EBC and executive engagement</div>
+      <div class="good-box">
+        <span class="label">Stronger</span>
+        <div>"...delivering 100+ CISO briefings that converted to platform consolidation decisions maps directly to the customer evangelism pillar of this role — I've been doing the job without the title."</div>
+      </div>
+    </div>
+    <div class="example-block">
+      <div class="example-label">C — AI tool building</div>
+      <div class="good-box">
+        <span class="label">Stronger</span>
+        <div>"...building multi-agent content pipelines that cut production cycles by 80% maps directly to Rashish's AI-augmented threat intelligence agenda — I'm not theorizing about AI adoption, I've deployed it in a live enterprise environment and measured the outcome."</div>
+      </div>
+    </div>
+    <div class="example-block">
+      <div class="example-label">D — Team leadership</div>
+      <div class="good-box">
+        <span class="label">Stronger</span>
+        <div>"...maintaining 90% retention across seven markets over three years maps directly to what a new FortiGuard regional team needs — a leader who knows how to build capability in the APAC talent market without the revolving door that plagues most cybersecurity SE organizations."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Close Type 2 — For Landscape &amp; Opinion Answers</div>
+    <div class="formula-box">Analysis → "The implication is..." → Actionable point</div>
+
+    <div class="template-box" data-template-id="close-2">
+      <span class="label">Template</span>
+      <div class="template-content">...so the implication for <span contenteditable="true" data-field="0" data-placeholder="customer / audience">[customer / audience]</span> is <span contenteditable="true" data-field="1" data-placeholder="specific risk or action">[specific risk or action]</span>.
+That's the conversation I'd want <span contenteditable="true" data-field="2" data-placeholder="company / FortiGuard">[company / FortiGuard]</span> to be leading
+in this market.</div>
+      <div class="template-actions">
+        <button class="copy-btn">Copy Template</button>
+        <button class="clear-btn">Clear all</button>
+        <span class="copy-status">Copied ✓</span>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-label">Example A</div>
+      <div class="good-box">
+        <span class="label">Stronger</span>
+        <div>"...AI has reduced attack cycle times from months to days — and 80% of that activity now runs without human direction. The implication for a CISO managing a 5-person SOC in Jakarta is that their current playbook is obsolete. That's the FortiGuard narrative I'd build the APAC content engine around."</div>
+      </div>
+    </div>
+    <div class="example-block">
+      <div class="example-label">Example B</div>
+      <div class="good-box">
+        <span class="label">Stronger</span>
+        <div>"...OT environments that were never designed for connectivity are now exposed because digital transformation mandates override security readiness timelines. The implication for manufacturers in Malaysia and Thailand is that they have a critical infrastructure exposure problem that most haven't named yet."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">The Hardest Skill</div>
+    <div class="formula-box">Land your strongest sentence → Stop. Do not add more.</div>
+    <p>The urge to keep talking after you've made your point is the enemy of executive communication. Every sentence you add after your landing point dilutes the one before it. Practice ending on your best sentence and going completely silent. Silence after a strong point reads as confidence. Extra sentences after a strong point read as insecurity.</p>
+
+    <div class="example-block">
+      <div class="example-label">Example 1 — Dashboard achievement</div>
+      <div class="compare-grid">
+        <div class="bad-box">
+          <span class="label">Weaker</span>
+          <div>"...so that's where my value is. Right, I may not be the very shining speaker that does all the flash stuff, I think I'm good enough to do that, but just that, my true value is from from that end, and you know, I've also built some other things too, yeah so that's basically it..."</div>
+        </div>
+        <div class="good-box">
+          <span class="label">Stronger</span>
+          <div>"...my true value is the ability to resonate with APAC CISO pain points and translate them into narratives that move commercial decisions. That's what I bring." [STOP.]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-label">Example 2 — Award recognition</div>
+      <div class="compare-grid">
+        <div class="bad-box">
+          <span class="label">Weaker</span>
+          <div>"...so the dashboard was quite successful and it went global and I got the award and my VP was very happy with it and it got featured in the investor report and yeah, you know, it was a good initiative overall and I'm quite proud of it I suppose..."</div>
+        </div>
+        <div class="good-box">
+          <span class="label">Stronger</span>
+          <div>"...the dashboard became the top-3 most-used asset globally across 3,000 reports, recognized with the Global Unsung Hero Award, and featured in investor reports as a strategic differentiator. That's the scale of impact I build toward." [STOP.]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 6: PRACTICE DRILL ========== -->
+<section class="section" id="drill">
+  <h2 class="section-title">Practice Drill</h2>
+  <p class="section-intro">Eight cards. One question at a time. Use the spine, fill in the template, run the timer, repeat tomorrow.</p>
+
+  <div class="drill-progress" id="drillProgress"></div>
+
+  <div id="drillContainer"></div>
+
+  <div class="drill-nav">
+    <button class="nav-btn" id="prevBtn">← Prev</button>
+    <span class="card-counter" id="cardCounter">Card 1 of 8</span>
+    <button class="nav-btn" id="nextBtn">Next →</button>
+  </div>
+</section>
+
+<footer>
+  <div class="rule"></div>
+  <div class="foot-title">EXECUTIVE COMMUNICATION GUIDE</div>
+  <div class="foot-meta"><a href="http://cheewan.ai" target="_blank" rel="noopener">cheewan.ai</a> · Warm Editorial v1.0 · April 2026</div>
+</footer>
+
+</main>
+
+<script>
+// ===== Tab navigation =====
+const tabs = document.querySelectorAll('.tab');
+const sections = document.querySelectorAll('.section');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.section;
+    tabs.forEach(t => t.classList.remove('active'));
+    sections.forEach(s => s.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+// ===== Practice Drill data =====
+const drillCards = [
+  {
+    q: "Tell me about yourself.",
+    spine: "Number → 3 metric-led points → Bridge close",
+    tip: "Lead with your most recent, most relevant metric. Never start from the beginning of your career. They don't want your life story — they want to know if you're worth the next hour of their time.",
+    template: [
+      { before: "", placeholder: "Number" },
+      { before: " things define my background.\nFirst, ", placeholder: "metric-led point — most relevant to this role" },
+      { before: ".\nSecond, ", placeholder: "metric-led point — your differentiator" },
+      { before: ".\nThird, ", placeholder: "what makes you unusual in this market" },
+      { before: ".\nThat combination maps directly to ", placeholder: "what this role specifically needs" },
+      { before: ".", placeholder: null }
+    ]
+  },
+  {
+    q: "What is your view on the current threat landscape?",
+    spine: "Three shifts → Present implication → APAC-specific angle",
+    tip: "End with an implication, never a description. The interviewer knows what happened — they want your strategic read on what it means for their customers in this region. That's the value-add they're hiring for.",
+    template: [
+      { before: "Three shifts define it.\n", placeholder: "Shift 1 — where it started" },
+      { before: ".\nThen ", placeholder: "Shift 2 — what changed" },
+      { before: ".\nNow ", placeholder: "Shift 3 — current state" },
+      { before: ".\nThe implication for APAC enterprises is ", placeholder: "specific consequence" },
+      { before: ".\nThat's the ", placeholder: "company" },
+      { before: " narrative I'd build around.", placeholder: null }
+    ]
+  },
+  {
+    q: "What is your biggest gap or weakness for this role?",
+    spine: "Acknowledge → Reframe → Evidence → Forward plan",
+    tip: "Surface the gap yourself before they find it. Proactive honesty reads as self-awareness. Defensive silence reads as hiding something. You control the framing only if you speak first.",
+    template: [
+      { before: "I want to be transparent — ", placeholder: "gap in one clear sentence" },
+      { before: ".\nThe way I think about it: ", placeholder: "reframe on your terms" },
+      { before: ".\nHere's the evidence it doesn't disqualify me: ", placeholder: "specific proof point" },
+      { before: ".\nIn this role I'd address it by ", placeholder: "concrete action in first 90 days" },
+      { before: ".", placeholder: null }
+    ]
+  },
+  {
+    q: "Why are you looking to leave / why are you moving on?",
+    spine: "Context (1 sentence) → Forward rationale → Role alignment",
+    tip: "Context explains the circumstance. Rationale explains the ambition. Role alignment closes the argument. Never speak negatively about any employer — it makes you the risk, not the opportunity.",
+    template: [
+      { before: "", placeholder: "One-sentence context — reorg, transition, inflection point" },
+      { before: ".\nMore fundamentally, ", placeholder: "what genuinely energized you most" },
+      { before: ".\nThis role is where ", placeholder: "that work" },
+      { before: " is the primary function —\nnot one component of a broader mandate.\nThat's not a lateral move — it's the role I've been building toward.", placeholder: null }
+    ]
+  },
+  {
+    q: "Give me a specific example of a difficult challenge you solved.",
+    spine: "Outcome first → Proof metric → How (2 sentences) → Bridge",
+    tip: "Start with the result. 80% of candidates start with the problem — flip it. The interviewer is building a mental case for you or against you. Lead with evidence that builds the case.",
+    template: [
+      { before: "The outcome was ", placeholder: "metric or verifiable result" },
+      { before: ".\nWe were facing ", placeholder: "challenge in one sentence" },
+      { before: ".\nI ", placeholder: "what you did — two sentences maximum" },
+      { before: ".\nThat same approach — ", placeholder: "the transferable principle" },
+      { before: " —\nmaps directly to ", placeholder: "specific challenge in the new role" },
+      { before: ".", placeholder: null }
+    ]
+  },
+  {
+    q: "What would your manager say your superpower is?",
+    spine: "Two clear claims → Evidence for each → Land with role relevance",
+    tip: "Never hedge when asked about your strengths. 'I think my manager might say...' is a credibility leak. Deliver with full conviction — you know what you're good at. So does your manager. Own it.",
+    template: [
+      { before: "", placeholder: "Manager name" },
+      { before: " would say two things.\nFirst — ", placeholder: "superpower 1 in a memorable phrase" },
+      { before: ".\n", placeholder: "One sentence of evidence" },
+      { before: ".\nSecond — ", placeholder: "superpower 2" },
+      { before: ".\n", placeholder: "One sentence of evidence" },
+      { before: ".\nBoth show up in what this role needs most.", placeholder: null }
+    ]
+  },
+  {
+    q: "Do you have any questions for me?",
+    spine: "3 strategic questions — never zero",
+    tip: "Zero questions is a disqualifying signal at VP level. It signals low stakes, low curiosity, or poor preparation. The quality of your questions is often more memorable than the quality of your answers. Prepare three. Use all three.",
+    template: [
+      { before: "Q1 — Role mandate:\n'", placeholder: "Role" },
+      { before: " has ", placeholder: "X" },
+      { before: " and ", placeholder: "Y" },
+      { before: " components. How do you see the balance between thought leadership and commercial accountability in practice?'\n\nQ2 — Strategic agenda:\n'What's the brand gap you're most focused on closing in APAC over the next twelve months?'\n\nQ3 — Their experience:\n'You came from ", placeholder: "company" },
+      { before: ". What did you learn about this region that someone in this role should internalize in the first ninety days?'", placeholder: null }
+    ]
+  },
+  {
+    q: "How do you handle rejection, setbacks, or negative feedback?",
+    spine: "Real example → Honest reaction → What you did → What changed",
+    tip: "Don't use a manufactured weakness dressed as a strength ('I work too hard...'). Pick a real moment. Show genuine reflection. Senior leaders hire people who can process failure — not people who pretend it doesn't happen.",
+    template: [
+      { before: "The clearest example: ", placeholder: "real situation in one sentence" },
+      { before: ".\nMy initial response was ", placeholder: "honest reaction" },
+      { before: ".\nWhat I actually did: ", placeholder: "specific action you took" },
+      { before: ".\nWhat I learned: ", placeholder: "genuine insight" },
+      { before: ".\nThe way that shows up now: ", placeholder: "how it changed your approach" },
+      { before: " —\nand that's relevant to this role because ", placeholder: "connection" },
+      { before: ".", placeholder: null }
+    ]
+  }
+];
+
+let currentDrill = 0;
+const completed = new Set();
+let timerInterval = null;
+
+const drillProgress = document.getElementById('drillProgress');
+const drillContainer = document.getElementById('drillContainer');
+const cardCounter = document.getElementById('cardCounter');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+function renderProgress() {
+  drillProgress.innerHTML = '';
+  for (let i = 0; i < drillCards.length; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot';
+    if (completed.has(i)) dot.classList.add('completed');
+    if (i === currentDrill) dot.classList.add('active');
+    drillProgress.appendChild(dot);
+  }
+}
+
+function buildTemplateHTML(template, cardIdx) {
+  let html = '';
+  template.forEach((part, idx) => {
+    html += escapeHtml(part.before);
+    if (part.placeholder !== null) {
+      html += `<span contenteditable="true" data-field="${idx}" data-card="${cardIdx}" data-placeholder="${escapeAttr(part.placeholder)}"></span>`;
+    }
+  });
+  return html;
+}
+
+function escapeHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+function escapeAttr(s) {
+  return s.replace(/"/g, '&quot;');
+}
+
+function renderDrillCard() {
+  const card = drillCards[currentDrill];
+  drillContainer.innerHTML = `
+    <div class="drill-card" id="currentDrill">
+      <span class="drill-num">Question ${currentDrill + 1}</span>
+      <div class="drill-question">${escapeHtml(card.q)}</div>
+      <div class="formula-box">${escapeHtml(card.spine)}</div>
+      <div class="tip-box">
+        <span class="label">Tip</span>
+        <div>${escapeHtml(card.tip)}</div>
+      </div>
+      <div class="template-box" data-template-id="drill-${currentDrill}">
+        <span class="label">Template</span>
+        <div class="template-content drill-template">${buildTemplateHTML(card.template, currentDrill)}</div>
+        <div class="template-actions">
+          <button class="copy-btn">Copy Template</button>
+          <button class="clear-btn">Clear all</button>
+          <span class="copy-status">Copied ✓</span>
+          <span class="saved-indicator">Saved</span>
+        </div>
+      </div>
+      <div class="drill-bottom">
+        <span class="target-badge">Target: 60–90 sec</span>
+        <button class="btn timer-btn">Start Timer</button>
+        <span class="timer-display" id="timerDisplay">01:30</span>
+        <span class="times-up" id="timesUp">Time's up</span>
+      </div>
+    </div>
+  `;
+  cardCounter.textContent = `Card ${currentDrill + 1} of ${drillCards.length}`;
+  prevBtn.disabled = currentDrill === 0;
+  nextBtn.disabled = false;
+  renderProgress();
+  loadDrillFields();
+  attachTemplateHandlers(document.querySelector('#currentDrill .template-box'));
+  attachTimerHandler();
+}
+
+function loadDrillFields() {
+  const fields = document.querySelectorAll('#currentDrill [contenteditable="true"]');
+  fields.forEach(field => {
+    const key = `ecg-card-${currentDrill}-field-${field.dataset.field}`;
+    const saved = localStorage.getItem(key);
+    if (saved) field.textContent = saved;
+  });
+}
+
+function attachTimerHandler() {
+  const btn = document.querySelector('#currentDrill .timer-btn');
+  const display = document.getElementById('timerDisplay');
+  const timesUp = document.getElementById('timesUp');
+  let secondsLeft = 90;
+  let running = false;
+
+  function reset() {
+    if (timerInterval) clearInterval(timerInterval);
+    timerInterval = null;
+    secondsLeft = 90;
+    running = false;
+    display.textContent = '01:30';
+    display.classList.remove('warning', 'danger');
+    timesUp.classList.remove('show');
+    btn.textContent = 'Start Timer';
+  }
+
+  function tick() {
+    secondsLeft--;
+    const m = String(Math.floor(secondsLeft / 60)).padStart(2, '0');
+    const s = String(secondsLeft % 60).padStart(2, '0');
+    display.textContent = `${m}:${s}`;
+    if (secondsLeft <= 10) {
+      display.classList.remove('warning');
+      display.classList.add('danger');
+    } else if (secondsLeft <= 30) {
+      display.classList.add('warning');
+    }
+    if (secondsLeft <= 0) {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      timesUp.classList.add('show');
+      btn.textContent = 'Reset';
+      running = false;
+    }
+  }
+
+  btn.addEventListener('click', () => {
+    if (running) {
+      reset();
+    } else if (secondsLeft <= 0) {
+      reset();
+    } else {
+      running = true;
+      btn.textContent = 'Stop';
+      timerInterval = setInterval(tick, 1000);
+    }
+  });
+}
+
+function transitionDrill(toIdx) {
+  if (toIdx < 0 || toIdx >= drillCards.length) return;
+  if (timerInterval) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+  completed.add(currentDrill);
+  const cur = document.getElementById('currentDrill');
+  if (cur) cur.classList.add('fading');
+  setTimeout(() => {
+    currentDrill = toIdx;
+    renderDrillCard();
+  }, 280);
+}
+
+prevBtn.addEventListener('click', () => transitionDrill(currentDrill - 1));
+nextBtn.addEventListener('click', () => transitionDrill(currentDrill + 1));
+
+// ===== Template handlers (for all template-boxes, including in non-drill sections) =====
+function attachTemplateHandlers(box) {
+  if (!box) return;
+  const id = box.dataset.templateId;
+  const fields = box.querySelectorAll('[contenteditable="true"]');
+  const copyBtn = box.querySelector('.copy-btn');
+  const clearBtn = box.querySelector('.clear-btn');
+  const status = box.querySelector('.copy-status');
+  const saved = box.querySelector('.saved-indicator');
+
+  fields.forEach(f => {
+    // Load saved
+    if (id && f.dataset.field !== undefined) {
+      const key = `ecg-${id}-field-${f.dataset.field}`;
+      const v = localStorage.getItem(key);
+      if (v) f.textContent = v;
+    }
+    f.addEventListener('keyup', () => {
+      if (id && f.dataset.field !== undefined) {
+        const key = `ecg-${id}-field-${f.dataset.field}`;
+        localStorage.setItem(key, f.textContent);
+        if (saved) {
+          saved.classList.add('show');
+          clearTimeout(saved._t);
+          saved._t = setTimeout(() => saved.classList.remove('show'), 1200);
+        }
+      }
+    });
+  });
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const content = box.querySelector('.template-content');
+      // Get plain text rendering with current values
+      const text = content.innerText || content.textContent;
+      const finalText = text.replace(/ /g, ' ');
+      navigator.clipboard.writeText(finalText).then(() => {
+        if (status) {
+          status.classList.add('show');
+          setTimeout(() => status.classList.remove('show'), 2000);
+        }
+      }).catch(() => {
+        // Fallback
+        const ta = document.createElement('textarea');
+        ta.value = finalText;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        if (status) {
+          status.classList.add('show');
+          setTimeout(() => status.classList.remove('show'), 2000);
+        }
+      });
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      fields.forEach(f => {
+        f.textContent = '';
+        if (id && f.dataset.field !== undefined) {
+          const key = `ecg-${id}-field-${f.dataset.field}`;
+          localStorage.removeItem(key);
+        }
+        // Drill cards use a different key format
+        if (f.dataset.card !== undefined && f.dataset.field !== undefined) {
+          const dkey = `ecg-card-${f.dataset.card}-field-${f.dataset.field}`;
+          localStorage.removeItem(dkey);
+        }
+      });
+    });
+  }
+
+  // Special drill key format
+  fields.forEach(f => {
+    if (f.dataset.card !== undefined) {
+      const cardIdx = f.dataset.card;
+      const fieldIdx = f.dataset.field;
+      const key = `ecg-card-${cardIdx}-field-${fieldIdx}`;
+      const v = localStorage.getItem(key);
+      if (v && !f.textContent) f.textContent = v;
+      f.addEventListener('keyup', () => {
+        localStorage.setItem(key, f.textContent);
+        if (saved) {
+          saved.classList.add('show');
+          clearTimeout(saved._t);
+          saved._t = setTimeout(() => saved.classList.remove('show'), 1200);
+        }
+      });
+    }
+  });
+}
+
+// Attach to all static template boxes
+document.querySelectorAll('.template-box').forEach(box => {
+  attachTemplateHandlers(box);
+});
+
+// Initialize practice drill
+renderDrillCard();
+
+// ===== Service worker registration (PWA) =====
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {
+      // Silent fail — app still works without offline support (e.g. file:// protocol)
+    });
+  });
+}
+</script>
+
+</body>
+</html>
