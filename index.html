@@ -16,6 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
+  /* Base color tokens — Warm Editorial palette */
   --bg: #f5f2eb;
   --card: #fffcf7;
   --border: #d9d0c4;
@@ -29,6 +30,41 @@
   --c5: #d97706;
   --c6: #0891b2;
   --c7: #be185d;
+
+  /* Semantic tokens */
+  --accent: var(--c1);
+  --accent-hover: #c8390a;
+  --accent-soft: rgba(232, 67, 10, 0.08);
+  --accent-tint: rgba(232, 67, 10, 0.05);
+  --success-soft: rgba(22, 163, 74, 0.07);
+  --warning-soft: rgba(217, 119, 6, 0.08);
+  --info-soft: rgba(37, 99, 235, 0.07);
+  --tech-soft: rgba(147, 51, 234, 0.07);
+
+  /* Type scale */
+  --fs-mono-xs: 10px;
+  --fs-mono-sm: 11px;
+  --fs-body-sm: 13px;
+  --fs-body-md: 14px;
+  --fs-body-lg: 16px;
+  --fs-h3: 20px;
+  --fs-h2: 24px;
+  --fs-h1: 44px;
+  --fs-display: 56px;
+  --fs-display-xl: 72px;
+
+  /* Spacing */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-7: 32px; --space-8: 40px;
+  --space-9: 48px; --space-10: 64px;
+
+  /* Radii */
+  --radius-xs: 4px; --radius-sm: 6px; --radius-md: 8px;
+  --radius-lg: 10px; --radius-pill: 999px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-1: 120ms; --duration-2: 180ms; --duration-3: 240ms;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -155,9 +191,32 @@ main {
 h2.section-title {
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 0.04em;
-  font-size: 32px;
+  font-size: var(--fs-h1);
   color: var(--ink);
-  margin-bottom: 8px;
+  line-height: 1.05;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+/* Eyebrow — small mono label with red dot, sits above section title */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  display: block;
 }
 
 h3 {
@@ -322,36 +381,48 @@ p:last-child { margin-bottom: 0; }
   color: var(--ink2);
 }
 
-/* O-P-E-B Table */
-.opeb-table {
-  margin: 12px 0;
+/* O-P-E-B — 4-column letter grid */
+.opeb {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 16px 0 12px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
+  background: var(--card);
   overflow: hidden;
 }
-.opeb-row {
-  display: flex;
-  gap: 14px;
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--border);
-  align-items: flex-start;
+.opeb__col {
+  padding: 22px 18px 20px;
+  border-right: 1px solid var(--border);
+  position: relative;
 }
-.opeb-row:last-child { border-bottom: none; }
-.opeb-row:nth-child(odd) { background: var(--card); }
-.opeb-row:nth-child(even) { background: var(--bg); }
-.opeb-dot {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  margin-top: 7px;
-  flex-shrink: 0;
+.opeb__col:last-child { border-right: none; }
+.opeb__letter {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  margin: 0 0 4px;
 }
-.opeb-content { flex: 1; }
-.opeb-title {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--ink);
-  margin-bottom: 4px;
+.opeb__col:nth-child(1) .opeb__letter { color: var(--c1); }
+.opeb__col:nth-child(2) .opeb__letter { color: var(--c2); }
+.opeb__col:nth-child(3) .opeb__letter { color: var(--c4); }
+.opeb__col:nth-child(4) .opeb__letter { color: var(--c3); }
+.opeb__name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+.opeb__desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink2);
+  margin: 0;
 }
 
 /* Side-by-side examples */
@@ -754,7 +825,7 @@ footer .foot-meta a:hover { color: var(--c1); border-bottom-color: var(--c1); }
 @media (max-width: 600px) {
   main { padding: 20px 14px; }
   .card { padding: 18px 18px; }
-  h2.section-title { font-size: 28px; }
+  h2.section-title { font-size: 36px; }
   h3 { font-size: 18px; }
   body { font-size: 13px; }
   .compare-grid { grid-template-columns: 1fr; }
@@ -764,7 +835,11 @@ footer .foot-meta a:hover { color: var(--c1); border-bottom-color: var(--c1); }
   .site-header { padding: 12px 16px; }
   .brand-title { font-size: 16px; }
   .nav { padding: 10px 16px; }
-  .opeb-row { flex-direction: row; }
+  .opeb { grid-template-columns: repeat(2, 1fr); }
+  .opeb__col { border-bottom: 1px solid var(--border); }
+  .opeb__col:nth-child(2n) { border-right: none; }
+  .opeb__col:nth-child(n+3) { border-bottom: none; }
+  .opeb__letter { font-size: 56px; }
   .nav-btn, .btn { min-height: 44px; }
 }
 
@@ -818,7 +893,10 @@ footer .foot-meta a:hover { color: var(--c1); border-bottom-color: var(--c1); }
 <!-- ========== SECTION 1: CORE FORMULA ========== -->
 <section class="section active" id="formula">
   <div class="section-header">
-    <h2 class="section-title">Core Formula</h2>
+    <div>
+      <div class="eyebrow">The Foundation</div>
+      <h2 class="section-title">Core Formula</h2>
+    </div>
     <button class="help-icon" id="helpIcon" aria-label="How to use this guide" aria-expanded="false">?</button>
     <div class="help-tooltip" id="helpTooltip" role="dialog" aria-label="How to use this guide">
       <h4>How to Use It as a Daily Habit</h4>
@@ -835,34 +913,26 @@ footer .foot-meta a:hover { color: var(--c1); border-bottom-color: var(--c1); }
     <div class="card-label">The Master Formula</div>
     <div class="formula-box">O — Outcome first  ·  P — Proof  ·  E — Explanation  ·  B — Bridge</div>
 
-    <div class="opeb-table">
-      <div class="opeb-row">
-        <span class="opeb-dot" style="background: var(--c1);"></span>
-        <div class="opeb-content">
-          <div class="opeb-title">Outcome first</div>
-          <div>Start with the result. What happened? What was the business impact? Lead with the destination — let them ask how you got there.</div>
-        </div>
+    <div class="opeb">
+      <div class="opeb__col">
+        <div class="opeb__letter">O</div>
+        <div class="opeb__name">Outcome</div>
+        <p class="opeb__desc">Start with the result. What happened? What was the business impact? Lead with the destination — let them ask how you got there.</p>
       </div>
-      <div class="opeb-row">
-        <span class="opeb-dot" style="background: var(--c2);"></span>
-        <div class="opeb-content">
-          <div class="opeb-title">Proof — one metric</div>
-          <div>$7.6M influenced. 86% conversion. 90% retention. The number does the credibility work for you. One specific, verifiable fact.</div>
-        </div>
+      <div class="opeb__col">
+        <div class="opeb__letter">P</div>
+        <div class="opeb__name">Proof — one metric</div>
+        <p class="opeb__desc">$7.6M influenced. 86% conversion. 90% retention. The number does the credibility work for you. One specific, verifiable fact.</p>
       </div>
-      <div class="opeb-row">
-        <span class="opeb-dot" style="background: var(--c3);"></span>
-        <div class="opeb-content">
-          <div class="opeb-title">Explanation — 2 sentences max</div>
-          <div>How did you achieve it? Maximum two sentences. If it needs more, you're still telling the journey, not the outcome.</div>
-        </div>
+      <div class="opeb__col">
+        <div class="opeb__letter">E</div>
+        <div class="opeb__name">Explanation — 2 sentences max</div>
+        <p class="opeb__desc">How did you achieve it? Maximum two sentences. If it needs more, you're still telling the journey, not the outcome.</p>
       </div>
-      <div class="opeb-row">
-        <span class="opeb-dot" style="background: var(--c4);"></span>
-        <div class="opeb-content">
-          <div class="opeb-title">Bridge to the role</div>
-          <div>Connect to what they need. "That experience maps directly to..." Close every answer with a bridge or it just floats.</div>
-        </div>
+      <div class="opeb__col">
+        <div class="opeb__letter">B</div>
+        <div class="opeb__name">Bridge to the role</div>
+        <p class="opeb__desc">Connect to what they need. "That experience maps directly to..." Close every answer with a bridge or it just floats.</p>
       </div>
     </div>
   </div>
@@ -936,6 +1006,7 @@ footer .foot-meta a:hover { color: var(--c1); border-bottom-color: var(--c1); }
 
 <!-- ========== SECTION 2: SENTENCE FLOW ========== -->
 <section class="section" id="flow">
+  <div class="eyebrow">Sentence Spines</div>
   <h2 class="section-title">Sentence Flow</h2>
   <p class="section-intro">Every strong executive answer runs on a spine. Learn these four spines and you can structure any answer in real time — no preparation required.</p>
 
@@ -1067,6 +1138,7 @@ That's not a lateral move — it's the role I've been building toward.</div>
 
 <!-- ========== SECTION 3: OPENING LINES ========== -->
 <section class="section" id="openings">
+  <div class="eyebrow">Power Openers</div>
   <h2 class="section-title">Opening Lines</h2>
   <p class="section-intro">The first five words determine whether the executive leans in or checks their phone. Strong openers signal you already have the answer — you're delivering it, not searching for it.</p>
 
@@ -1145,6 +1217,7 @@ That's not a lateral move — it's the role I've been building toward.</div>
 
 <!-- ========== SECTION 4: KILL THE FILLERS ========== -->
 <section class="section" id="fillers">
+  <div class="eyebrow">Verbal Hygiene</div>
   <h2 class="section-title">Kill the Fillers</h2>
   <p class="section-intro">Filler words are not a speech habit — they are a credibility signal. Every "um", "you know", and "so yeah" tells the listener your brain has not found the answer yet. Replace them all with silence.</p>
 
@@ -1277,6 +1350,7 @@ That's not a lateral move — it's the role I've been building toward.</div>
 
 <!-- ========== SECTION 5: HOW TO CLOSE ========== -->
 <section class="section" id="close">
+  <div class="eyebrow">The Landing</div>
   <h2 class="section-title">How to Close</h2>
   <p class="section-intro">Most people let answers drift to a natural stop. Strong communicators land every answer on a deliberate point — and then stop talking. The last sentence is the one that gets remembered.</p>
 
@@ -1394,6 +1468,7 @@ in this market.</div>
 
 <!-- ========== SECTION 6: PRACTICE DRILL ========== -->
 <section class="section" id="drill">
+  <div class="eyebrow">Daily Reps</div>
   <h2 class="section-title">Practice Drill</h2>
   <p class="section-intro">Eight cards. One question at a time. Use the spine, fill in the template, run the timer, repeat tomorrow.</p>
 
