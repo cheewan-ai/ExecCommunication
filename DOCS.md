@@ -22,6 +22,7 @@
 12. [Custom Domain Setup](#12-custom-domain-setup)
 13. [Phase 2 Roadmap](#13-phase-2-roadmap)
 14. [Quick Reference](#14-quick-reference)
+15. [Troubleshooting Common Issues](#15-troubleshooting-common-issues)
 
 ---
 
@@ -128,6 +129,7 @@ ExecCommunication/
 ├── package.json                    # Dependencies and npm scripts
 ├── next.config.ts                  # Next.js config
 ├── tsconfig.json                   # TypeScript config
+├── vercel.json                     # Vercel framework config (do not delete — see §8)
 ├── .vercel/project.json            # Vercel project ID (do not delete)
 └── README.md                       # Short developer readme
 ```
@@ -380,8 +382,26 @@ Production URL updates
 | Organization | cheewan-ais-projects |
 | Project ID | prj_jpGtD7oV4oJEJQsmu6xuMPd9Yo3i |
 | Production branch | main |
-| Build command | `next build` (auto-detected) |
-| Output directory | `.next` (auto-detected) |
+| Framework | Next.js (forced via `vercel.json`) |
+| Build command | `next build` (set in `vercel.json`) |
+| Output directory | `.next` (set in `vercel.json`) |
+
+### Why `vercel.json` is committed
+
+The project had stale "Static / Other" framework settings carried over from the original vanilla HTML deployment. The Vercel UI couldn't fully clear them — toggling overrides off saved an empty string instead of `null`, which Vercel still interpreted as "use root directory" and skipped the Next.js build.
+
+The `vercel.json` file at the project root forces the correct settings on every deploy regardless of what the Vercel UI thinks:
+
+```json
+{
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install"
+}
+```
+
+**Do not delete this file.** It is the source of truth for build configuration. If you need to change build behavior, edit this file rather than the Vercel UI settings.
 
 ---
 
@@ -577,11 +597,16 @@ Features not yet built, in suggested priority order:
 
 | What | URL |
 |---|---|
-| Live app | https://execcommunication-kappa.vercel.app |
+| **Live app (recommended)** | **https://execcommunication-cheewan-ais-projects.vercel.app** |
+| Live app (alias, less reliable) | https://execcommunication-kappa.vercel.app |
 | GitHub repo | https://github.com/cheewan-ai/ExecCommunication |
 | Vercel dashboard | https://vercel.com/cheewan-ais-projects/execcommunication |
+| Vercel build settings | https://vercel.com/cheewan-ais-projects/execcommunication/settings/build-and-deployment |
+| Vercel deployment protection | https://vercel.com/cheewan-ais-projects/execcommunication/settings/deployment-protection |
 | V0 editor | https://v0.dev |
 | Legacy HTML app | https://cheewan-ai.github.io/ExecCommunication/ |
+
+> **Use the canonical team URL** (`execcommunication-cheewan-ais-projects.vercel.app`) — it always tracks the latest production deployment automatically. The `-kappa` alias is older and can fall behind when V0 or GitHub triggers new deployments.
 
 ### Key files for common changes
 
@@ -614,6 +639,94 @@ git diff                      # see uncommitted changes
 2. Find the last known-good deployment
 3. Click `···` → **Promote to Production**
 4. Done — live site reverts instantly
+
+---
+
+## 15. Troubleshooting Common Issues
+
+### Site returns 404 NOT_FOUND on all paths
+
+**Symptom:** Every URL returns Vercel's 404 error page, including `/login`. Build logs show the build completed in milliseconds (e.g., `Build Completed in /vercel/output [55ms]`).
+
+**Cause:** Vercel is treating the project as a static site and skipping `next build`. This usually happens when stale "Output Directory: ." settings carry over from a previous static deployment.
+
+**Fix:** Verify `vercel.json` exists at the project root with the correct framework config (see section 8). If missing, recreate it. If present but ignored, push any commit to trigger a fresh deploy.
+
+```bash
+cat vercel.json   # should show framework: nextjs
+git commit --allow-empty -m "Trigger redeploy"
+git push origin main
+```
+
+---
+
+### Site returns 401 Unauthorized
+
+**Symptom:** Browser shows a Vercel login screen instead of the app.
+
+**Cause:** **Vercel Authentication / Standard Protection** is enabled in project settings.
+
+**Fix:** Go to **Settings → Deployment Protection → Vercel Authentication → Disabled → Save**. Wait 30 seconds and retry.
+
+---
+
+### Safari shows 404 but Chrome works fine
+
+**Cause:** Safari aggressively caches 404 responses.
+
+**Fix:**
+- Hard refresh: `⌘ + Option + R`
+- Or: Develop menu → Empty Caches
+- Or: Open in Private window (`⌘ + Shift + N`)
+
+---
+
+### `git push` rejected with "non-fast-forward" error
+
+**Cause:** Remote has commits you don't have locally — usually because V0 pushed changes since you last pulled.
+
+**Fix:**
+```bash
+git pull --rebase origin main   # pull V0's changes and replay yours on top
+git push origin main             # try again
+```
+
+If `git pull` shows merge conflicts, the V0 changes overlap with your local changes. Resolve conflicts in the affected files, then:
+```bash
+git add <resolved-file>
+git rebase --continue
+git push origin main
+```
+
+---
+
+### Vercel deploys an old version even after pushing to GitHub
+
+**Cause:** Production Branch in Vercel is set to a different branch than what you pushed.
+
+**Fix:** Verify in **Settings → Git → Production Branch** is set to `main`.
+
+---
+
+### `npm run build` fails locally with "Module not found"
+
+**Cause:** Dependencies are out of date after pulling new code.
+
+**Fix:**
+```bash
+npm install
+npm run build
+```
+
+---
+
+### V0 changes don't appear on the live site
+
+**Diagnostic checklist:**
+1. Is the V0 commit actually on GitHub? Check https://github.com/cheewan-ai/ExecCommunication/commits/main
+2. Did Vercel detect the push? Check https://vercel.com/cheewan-ais-projects/execcommunication/deployments — there should be a new deployment within ~5 seconds of the push
+3. Did the deployment build successfully? Click into it and check Build Logs
+4. Is the right URL being checked? Use the canonical team URL, not `-kappa`
 
 ---
 
