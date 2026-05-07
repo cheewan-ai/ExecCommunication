@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
+/* ============================================================
+   ExecComms — Warm Editorial Design Tokens
+   Light backgrounds always. Flat design. No gradients/shadows.
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base color tokens */
+  --bg: #f5f2eb;        /* Parchment — page/canvas background */
+  --card: #fffcf7;      /* Warm White — cards, panels */
+  --border: #d9d0c4;    /* Warm Border — dividers, outlines */
+  --ink: #1a1410;       /* Deep Ink — headlines, dark UI */
+  --ink2: #3d3530;      /* Ink Light — body text */
+  --muted: #8a7f74;     /* Muted — captions, labels */
+
+  /* Accent tokens — one accent per component */
+  --c1: #e8430a;        /* Signal Red — primary CTA, highlight */
+  --c2: #2563eb;        /* Clarity Blue — links, network */
+  --c3: #16a34a;        /* Trust Green — success, positive */
+  --c4: #9333ea;        /* Deep Purple — AI, advanced concept */
+  --c5: #d97706;        /* Amber — warnings, caution */
+  --c6: #0891b2;        /* Ocean Cyan — data, intelligence */
+  --c7: #be185d;        /* Rose — people, human element */
+
+  /* Semantic */
+  --accent: var(--c1);
+  --accent-hover: #c8390a;
+  --accent-soft: rgba(232, 67, 10, 0.08);
+  --accent-tint: rgba(232, 67, 10, 0.05);
+  --success-soft: rgba(22, 163, 74, 0.07);
+  --warning-soft: rgba(217, 119, 6, 0.08);
+  --info-soft: rgba(37, 99, 235, 0.07);
+  --tech-soft: rgba(147, 51, 234, 0.07);
+  --rose-soft: rgba(190, 24, 93, 0.08);
 }
 
+/* Tailwind theme bridge */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-border-warm: var(--border);
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink2);
+  --color-muted: var(--muted);
+  --color-c1: var(--c1);
+  --color-c2: var(--c2);
+  --color-c3: var(--c3);
+  --color-c4: var(--c4);
+  --color-c5: var(--c5);
+  --color-c6: var(--c6);
+  --color-c7: var(--c7);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+
+  --font-display: var(--font-bebas), 'Oswald', 'Anton', sans-serif;
+  --font-body: var(--font-manrope), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), 'SF Mono', Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--ink2);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* Utility primitives reused across components */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-bebas), sans-serif;
+  letter-spacing: 0.04em;
+  font-size: 44px;
+  color: var(--ink);
+  line-height: 1.05;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+@media (max-width: 600px) {
+  .section-title { font-size: 36px; }
+}
+
+.card-label {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 14px;
+  display: block;
+}
+
+@media print {
+  body { background: white; color: black; }
+  .no-print { display: none !important; }
 }

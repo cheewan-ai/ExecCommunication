@@ -1,7 +1,8 @@
 {
-  "name": "exec-comms-scaffold",
-  "version": "0.1.0",
+  "name": "exec-comms",
+  "version": "0.2.0",
   "private": true,
+  "description": "Executive Communication Guide by Cheewan — Next.js app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#f5f2eb"/>
+  <rect x="128" y="128" width="48" height="48" fill="#e8430a"/>
+  <text x="128" y="304" font-family="'Bebas Neue', Impact, sans-serif" font-size="96" fill="#1a1410" letter-spacing="4">EXEC</text>
+  <text x="128" y="396" font-family="'Bebas Neue', Impact, sans-serif" font-size="96" fill="#1a1410" letter-spacing="4">COMMS</text>
+  <rect x="128" y="416" width="80" height="6" fill="#e8430a"/>
+</svg>
